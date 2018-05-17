@@ -8,14 +8,10 @@ namespace FizzBuzz
         {
             var count = 15;
 
-            Func<int, string> isFizz = i => i % 3 == 0 ? "Fizz" : "";
-
-            Func<int, string> isBuzz = i => i % 5 == 0 ? "Buzz" : "";
-
-            var fizzBuzz = "";
+			string isMatch(int check, string word, int number) => number % check == 0 ? word : "";
             for (var i = 1; i <= count; i++)
             {
-                fizzBuzz = isFizz(i) + isBuzz(i);
+                var fizzBuzz = isMatch(3, "Fizz", i) + isMatch(5, "Buzz", i);
                 if (fizzBuzz.Length == 0)
                 {
                     Console.Write(i);
